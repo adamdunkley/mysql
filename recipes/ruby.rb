@@ -30,7 +30,7 @@ loaded_recipes = if run_context.respond_to?(:loaded_recipes)
                    node.run_state[:seen_recipes]
                  end
 
-if loaded_recipes.include?('mysql::percona_repo')
+if loaded_recipes.include?('percona::package_repo')
   case node['platform_family']
   when 'debian'
     resources('apt_repository[percona]').run_action(:add)
